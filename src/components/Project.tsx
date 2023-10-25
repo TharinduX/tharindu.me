@@ -8,13 +8,15 @@ import React from 'react';
 import Sample from '../images/sample.png'
 import Profile from '../images/profile.jpg'
 
-const Project = () => {
+const Project = ({ item }: any) => {
+  const projectDate = new Date(item.projectDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
   return (
     <>
       <div className='items-center flex flex-col relative'>
         <div className='bg-accent rounded-lg p-0.5'>
           <div className='px-4 py-2 flex gap-3 text-muted-foreground border rounded-md text-md bg-background shadow-sm'>
-            <CalendarIcon /> September 20, 2023
+            <CalendarIcon /> {projectDate}
           </div>
         </div>
         <div className='lg:w-[65%] md:w-full p-1 bg-accent mt-8 rounded-2xl border mb-8'>
@@ -24,8 +26,8 @@ const Project = () => {
                 <div className='flex text-muted-foreground items-center mx-auto cursor-pointer'>
                   <FaGithub />
                   <span className='ml-2 text-sm'>
-                    <Link href='https://github.com/TharinduX/tharindu.me' rel="noopener noreferrer" target="_blank">
-                      https://github.com/TharinduX/tharindu.me
+                    <Link href={item.githubURL} rel="noopener noreferrer" target="_blank">
+                      {item.githubURL}
                     </Link>
                   </span>
                 </div>
@@ -35,29 +37,29 @@ const Project = () => {
               <div className=" p-5 border-dashed border rounded-lg w-full relative">
                 <div className='px-3 absolute -top-4 left-5 right-0 z-10 text-muted-foreground text-md bg-card max-w-fit'>Screenshot</div>
                 <div className='h-full border rounded-lg bg-accent/50'>
-                  <Image className='object-cover rounded-lg h-full' src={Sample} alt="Screenshot of the application" />
+                  <Image className='object-cover rounded-lg h-full' src={item.projectImage?.image} width={800} height={900} alt="Screenshot of the application" />
                 </div>
               </div>
               <div className='flex flex-col gap-5 w-full'>
                 <div className="border-dashed border rounded-lg relative">
-                  <div className='px-3 absolute -top-4 left-5 right-0 z-10 text-muted-foreground text-md bg-card max-w-fit'>Website</div>
+                  <div className='px-3 absolute -top-4 left-5 right-0 z-10 text-muted-foreground text-md bg-card max-w-fit capitalize'>{item.projectCategory}</div>
                   <div className='flex p-5'>
                     <div className='flex flex-col gap-3'>
                       <div className='flex gap-5 items-center'>
                         <div className='bg-accent/50 w-28 h-28 rounded-full'>
-                          <Image className='object-cover rounded-full' src={Profile} alt="Screenshot of the application" />
+                          <Image className='object-cover rounded-full' src={item.projectIcon?.icon} width={200} height={200} alt="Screenshot of the application" />
                         </div>
                         <div className='flex flex-col gap-2'>
-                          <div className='text-2xl'>Fullstack Blog</div>
+                          <div className='text-2xl'>{item.projectName}</div>
                           <div className='flex gap-2'>
-                            <div className='border bg-accent/50 rounded-full px-3 py-1 text-muted-foreground'>Next.js</div>
-                            <div className='border bg-accent/50 rounded-full px-3 py-1 text-muted-foreground'>Sanity</div>
-                            <div className='border bg-accent/50 rounded-full px-3 py-1 text-muted-foreground'>Tailwind</div>
+                            {item.techStack && item.techStack.map((tech: any, index: any) => (
+                              <div key={index} className='border bg-accent/50 rounded-full px-3 py-1 text-muted-foreground'>{tech.name}</div>
+                            ))}
                           </div>
                         </div>
                       </div>
                       <div className='text-sm text-muted-foreground'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu libero arcu. Nullam mollis id massa in efficitur. Etiam ultrices blandit arcu eget blandit. Proin tincidunt vestibulum sodales. Quisque mollis eros eu erat imperdiet interdum.
+                        {item.projectDescription}
                       </div>
                     </div>
                   </div>
@@ -65,18 +67,12 @@ const Project = () => {
                 <div className="border-dashed border rounded-lg relative">
                   <div className='px-3 absolute -top-4 left-5 right-0 z-10 text-muted-foreground text-md bg-card max-w-fit'>Features</div>
                   <div className='p-5'>
-                    <div className='mt-3'>
-                      <div className='text-lg'>Components</div>
-                      <div className='text-muted-foreground mt-2'>Multiple Activities, Fragment, AppCompat, RecyclerView, ViewPager</div>
-                    </div>
-                    <div className='mt-5'>
-                      <div className='text-lg'>Libraries</div>
-                      <div className='text-muted-foreground mt-2'>Multiple Retrofit, OkHttp, Gson, Glide, Butterknife</div>
-                    </div>
-                    <div className='mt-5'>
-                      <div className='text-lg'>Backend</div>
-                      <div className='text-muted-foreground mt-2'>Multiple Firebase Cloud Firestore, Firebase Cloud Functions</div>
-                    </div>
+                    {item.features && item.features.map((feature: any, index: any) => (
+                      <div key={index} className='mt-5'>
+                        <div className='text-lg'>{feature.title}</div>
+                        <div className='text-muted-foreground mt-2'>{feature.description}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
