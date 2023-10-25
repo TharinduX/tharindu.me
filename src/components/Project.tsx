@@ -1,8 +1,12 @@
 'use client';
 
-import { Calendar as CalendarIcon, Github } from 'lucide-react';
-
+import { Calendar as CalendarIcon } from 'lucide-react';
+import { FaGithub } from "react-icons/fa6";
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react';
+import Sample from '../images/sample.png'
+import Profile from '../images/profile.jpg'
 
 const Project = () => {
   return (
@@ -13,14 +17,16 @@ const Project = () => {
             <CalendarIcon /> September 20, 2023
           </div>
         </div>
-        <div className='w-[60%] p-1 bg-accent mt-8 rounded-2xl border mb-8'>
+        <div className='lg:w-[65%] md:w-full p-1 bg-accent mt-8 rounded-2xl border mb-8'>
           <div className='w-full h-full flex flex-col bg-card rounded-2xl border shadow-glow shadow-primary/30 overflow-hidden'>
             <div className='flex w-full bg-accent/50 p-5 border-b '>
               <div className='w-[70%] flex mx-auto items-center rounded-lg h-10 bg-accent border shadow-inner'>
-                <div className='flex text-muted-foreground items-center mx-auto'>
-                  <Github />
-                  <span className='ml-2'>
-                    https://github.com/TharinduX/tharindu.me
+                <div className='flex text-muted-foreground items-center mx-auto cursor-pointer'>
+                  <FaGithub />
+                  <span className='ml-2 text-sm'>
+                    <Link href='https://github.com/TharinduX/tharindu.me' rel="noopener noreferrer" target="_blank">
+                      https://github.com/TharinduX/tharindu.me
+                    </Link>
                   </span>
                 </div>
               </div>
@@ -28,7 +34,9 @@ const Project = () => {
             <div className='flex gap-5 p-10 w-full'>
               <div className=" p-5 border-dashed border rounded-lg w-full relative">
                 <div className='px-3 absolute -top-4 left-5 right-0 z-10 text-muted-foreground text-md bg-card max-w-fit'>Screenshot</div>
-                <div className='rounded-lg bg-accent/50 border h-full'></div>
+                <div className='h-full border rounded-lg bg-accent/50'>
+                  <Image className='object-cover rounded-lg h-full' src={Sample} alt="Screenshot of the application" />
+                </div>
               </div>
               <div className='flex flex-col gap-5 w-full'>
                 <div className="border-dashed border rounded-lg relative">
@@ -36,7 +44,8 @@ const Project = () => {
                   <div className='flex p-5'>
                     <div className='flex flex-col gap-3'>
                       <div className='flex gap-5 items-center'>
-                        <div className='bg-accent/50 rounded-full border w-28 h-28'>
+                        <div className='bg-accent/50 w-28 h-28 rounded-full'>
+                          <Image className='object-cover rounded-full' src={Profile} alt="Screenshot of the application" />
                         </div>
                         <div className='flex flex-col gap-2'>
                           <div className='text-2xl'>Fullstack Blog</div>
@@ -56,7 +65,7 @@ const Project = () => {
                 <div className="border-dashed border rounded-lg relative">
                   <div className='px-3 absolute -top-4 left-5 right-0 z-10 text-muted-foreground text-md bg-card max-w-fit'>Features</div>
                   <div className='p-5'>
-                    <div className='mt-5'>
+                    <div className='mt-3'>
                       <div className='text-lg'>Components</div>
                       <div className='text-muted-foreground mt-2'>Multiple Activities, Fragment, AppCompat, RecyclerView, ViewPager</div>
                     </div>

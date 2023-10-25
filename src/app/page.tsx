@@ -14,7 +14,7 @@ export default function Home() {
         <Nav />
         <div className='ruler'>
           <Hero />
-          <div className='relative h-full wrap overflow-hidden mt-8'>
+          <div className='relative h-full wrap mt-8'>
             <div className='border-1 border absolute h-full left-[50%]' ></div>
             <Project />
             <Project />
