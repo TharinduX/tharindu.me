@@ -1,5 +1,7 @@
+'use client';
+
 import { groq } from 'next-sanity';
-import client from './lib/client';
+import client from '../../sanity/lib/client';
 
 export async function getProjects() {
   return client.fetch(

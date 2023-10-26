@@ -31,7 +31,7 @@ const Nav = () => {
                     href='/'
                     legacyBehavior
                     passHref
-                    className={ pathName == "/" ? 'active' : ''}
+                    className={pathName == "/" ? 'active' : ''}
                   >
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}

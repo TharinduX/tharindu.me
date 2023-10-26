@@ -1,4 +1,5 @@
-export type ProjectType = {
+import { PortableTextBlock } from 'sanity';
+export type ProjectTypes = {
   _id: String;
   projectIcon: {
     image: String;
@@ -13,4 +14,5 @@ export type ProjectType = {
   };
   techStack: String[];
   projectDate: String;
+  content: PortableTextBlock[];
 };
