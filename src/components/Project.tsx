@@ -19,10 +19,10 @@ const Project = ({ item }: any) => {
             <CalendarIcon /> {projectDate}
           </div>
         </div>
-        <div className='lg:w-[65%] md:w-full p-1 bg-accent mt-8 rounded-2xl border mb-8'>
+        <div className='w-[90%] lg:w-[60%] p-1 bg-accent mt-8 rounded-2xl border mb-8'>
           <div className='w-full h-full flex flex-col bg-card rounded-2xl border shadow-glow shadow-primary/30 overflow-hidden'>
             <div className='flex w-full bg-accent/50 p-5 border-b '>
-              <div className='w-[70%] flex mx-auto items-center rounded-lg h-10 bg-accent border shadow-inner'>
+              <div className='w-[80%] flex mx-auto items-center rounded-lg h-10 bg-accent border shadow-inner p-2'>
                 <div className='flex text-muted-foreground items-center mx-auto cursor-pointer'>
                   <FaGithub />
                   <span className='ml-2 text-sm'>
@@ -33,32 +33,32 @@ const Project = ({ item }: any) => {
                 </div>
               </div>
             </div>
-            <div className='flex gap-5 p-10 w-full'>
-              <div className=" p-5 border-dashed border rounded-lg w-full relative">
+            <div className='flex flex-col lg:flex-row gap-7 p-10 w-full'>
+              <div className="p-5 border-dashed border rounded-lg w-full relative">
                 <div className='px-3 absolute -top-4 left-5 right-0 z-10 text-muted-foreground text-md bg-card max-w-fit'>Screenshot</div>
                 <div className='h-full border rounded-lg bg-accent/50'>
                   <Image className='object-cover rounded-lg h-full' src={item.projectImage?.image} width={800} height={900} alt="Screenshot of the application" />
                 </div>
               </div>
-              <div className='flex flex-col gap-5 w-full'>
+              <div className='flex flex-col gap-7 w-full'>
                 <div className="border-dashed border rounded-lg relative">
                   <div className='px-3 absolute -top-4 left-5 right-0 z-10 text-muted-foreground text-md bg-card max-w-fit capitalize'>{item.projectCategory}</div>
                   <div className='flex p-5'>
-                    <div className='flex flex-col gap-3'>
+                    <div className='flex flex-col gap-5'>
                       <div className='flex gap-5 items-center'>
-                        <div className='bg-accent/50 w-28 h-28 rounded-full'>
-                          <Image className='object-cover rounded-full' src={item.projectIcon?.icon} width={200} height={200} alt="Screenshot of the application" />
+                        <div className='bg-accent/50 rounded-full'>
+                          <Image className='object-cover rounded-full' src={item.projectIcon?.icon} width={100} height={100} alt="Screenshot of the application" />
                         </div>
                         <div className='flex flex-col gap-2'>
                           <div className='text-2xl'>{item.projectName}</div>
-                          <div className='flex gap-2'>
-                            {item.techStack && item.techStack.map((tech: any, index: any) => (
-                              <div key={index} className='border bg-accent/50 rounded-full px-3 py-1 text-muted-foreground'>{tech.name}</div>
-                            ))}
-                          </div>
                         </div>
                       </div>
-                      <div className='text-sm text-muted-foreground'>
+                      <div className='flex justify-start flex-wrap gap-2 max-w-lg'>
+                        {item.techStack && item.techStack.map((tech: any, index: any) => (
+                          <div key={index} className='border bg-accent/50 rounded-full px-3 py-1 text-muted-foreground text-sm'>{tech.name}</div>
+                        ))}
+                      </div>
+                      <div className='text-muted-foreground'>
                         {item.projectDescription}
                       </div>
                     </div>
