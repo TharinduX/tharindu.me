@@ -1,3 +1,5 @@
+'use client';
+
 import { Calendar as CalendarIcon, ExternalLink } from 'lucide-react';
 import { FaGithub } from "react-icons/fa6";
 import Image from 'next/image'

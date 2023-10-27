@@ -1,3 +1,4 @@
+'use client';
 
 import React, { useState } from 'react';
 import { AlignJustify, X } from 'lucide-react';
@@ -8,6 +9,7 @@ import { usePathname } from 'next/navigation';
 
 const Nav = () => {
   const path = usePathname();
+  console.log(path)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const showMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -15,7 +17,7 @@ const Nav = () => {
 
 
   return (
-    <header>
+    <header className={path.startsWith("/dashboard") ? "hidden" : ""}>
       <nav className='fixed w-full px-10 md:border z-50 bg-background'>
         <div className='max-w-screen-lg flex items-center justify-between mx-auto p-4'>
           <div className='text-xl font-semibold'>Tharindu<span className='text-primary'>X</span></div>
@@ -43,12 +45,14 @@ const Nav = () => {
           </div>
         </div>
         {isMobileMenuOpen && (
-          <div className='flex flex-col p-5 items-center gap-5'>
+          <div className='flex md:hidden flex-col p-5 items-center gap-5'>
             <Link className='px-5 rounded-full py-2 hover:bg-accent duration-300' href="/">Home
             </Link>
-            <Link className='px-5 rounded-full py-2 hover:bg-accent duration-300' href="/">Blog
+            <Link className='px-5 rounded-full py-2 hover:bg-accent duration-300' href="/about">About
             </Link>
-            <Link className='px-5 rounded-full py-2 hover:bg-accent duration-300' href="/">Contact
+            <Link className='px-5 rounded-full py-2 hover:bg-accent duration-300' href="/blog">Blog
+            </Link>
+            <Link className='px-5 rounded-full py-2 hover:bg-accent duration-300' href="/contact">Contact
             </Link>
           </div>
         )}
