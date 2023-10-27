@@ -61,8 +61,8 @@
 }
 
 .circle {
-  width: 450px;
-  height: 450px;
+  width: 700px;
+  height: 700px;
   background: linear-gradient(to bottom, #c72323 40%, #991b1b 50%);
   filter: blur(150px);
 }
