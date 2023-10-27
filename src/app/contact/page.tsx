@@ -2,7 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>Contact</div>
+    <div className='ruler h-screen'>Contact</div>
   )
 }
 

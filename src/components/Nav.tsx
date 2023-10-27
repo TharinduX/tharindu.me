@@ -9,7 +9,6 @@ import { usePathname } from 'next/navigation';
 
 const Nav = () => {
   const path = usePathname();
-  console.log(path)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const showMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -23,13 +22,13 @@ const Nav = () => {
           <div className='text-xl font-semibold'>Tharindu<span className='text-primary'>X</span></div>
           <div className='flex items-center'>
             <div className='hidden md:flex gap-2'>
-              <Link className={path === "/" ? "px-5 rounded-full py-2 bg-accent duration-300" : "px-5 rounded-full py-2 hover:bg-accent duration-300"} href="/">Home
+              <Link className={path === "/" ? "px-5 rounded-full py-2 bg-accent duration-300 shadow-inner" : "px-5 rounded-full py-2 hover:bg-accent duration-300"} href="/">Home
               </Link>
-              <Link className={path === "/about" ? "px-5 rounded-full py-2 bg-accent duration-300" : "px-5 rounded-full py-2 hover:bg-accent duration-300"} href="/about">About
+              <Link className={path === "/about" ? "px-5 rounded-full py-2 bg-accent duration-300 shadow-inner" : "px-5 rounded-full py-2 hover:bg-accent duration-300"} href="/about">About
               </Link>
-              <Link className={path === "/blog" ? "px-5 rounded-full py-2 bg-accent duration-300" : "px-5 rounded-full py-2 hover:bg-accent duration-300"} href="/blog">Blog
+              <Link className={path === "/blog" ? "px-5 rounded-full py-2 bg-accent duration-300 shadow-inner" : "px-5 rounded-full py-2 hover:bg-accent duration-300"} href="/blog">Blog
               </Link>
-              <Link className={path === "/contact" ? "px-5 rounded-full py-2 bg-accent duration-300" : "px-5 rounded-full py-2 hover:bg-accent duration-300"} href="/contact">Contact
+              <Link className={path === "/contact" ? "px-5 rounded-full py-2 bg-accent duration-300 shadow-inner" : "px-5 rounded-full py-2 hover:bg-accent duration-300"} href="/contact">Contact
               </Link>
             </div>
           </div>

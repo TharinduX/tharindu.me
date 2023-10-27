@@ -61,14 +61,14 @@
 }
 
 .circle {
-  -webkit-appearance: none;
   width: 450px;
   height: 450px;
-  background: linear-gradient(to bottom, #c72323 60%, #991b1b 40%);
-  filter: blur(150px);
+  background: hsl(0, 82%, 53%);
+  filter: blur(100px);
 }
 
 .ruler {
+  width: 100%;
   position: relative;
   background-image: repeating-linear-gradient(
       hsl(var(--ruler)) 0 1px,

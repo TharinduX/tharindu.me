@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className='overflow-x-hidden'>
+      <body >
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
           <Nav />
           {children}
