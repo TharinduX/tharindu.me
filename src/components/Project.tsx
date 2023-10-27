@@ -1,4 +1,4 @@
-import { Calendar as CalendarIcon } from 'lucide-react';
+import { Calendar as CalendarIcon, ExternalLink } from 'lucide-react';
 import { FaGithub } from "react-icons/fa6";
 import Image from 'next/image'
 import Link from 'next/link'
@@ -17,17 +17,23 @@ const Project = ({ item }: any) => {
             <CalendarIcon /> {projectDate}
           </div>
         </div>
-        <div className='w-[95%] md:w-[80%] lg:w-[65%] p-1 bg-accent mt-8 rounded-2xl border mb-8'>
+        <div className='max-w-screen-xl md:w-[80%] lg:w-[65%] p-1 bg-accent mt-8 rounded-2xl border mb-8'>
           <div className='w-full h-full flex flex-col bg-card rounded-2xl border shadow-glow shadow-primary/30 overflow-hidden'>
             <div className='flex w-full bg-accent/50 p-5 border-b '>
               <div className='w-[80%] flex mx-auto items-center rounded-lg h-10 bg-accent border shadow-inner p-2'>
-                <div className='flex text-muted-foreground items-center mx-auto cursor-pointer'>
-                  <FaGithub />
-                  <span className='ml-2 text-sm'>
+                <div className='md:flex text-muted-foreground items-center mx-auto cursor-pointer hidden'>
+                  <FaGithub size={18} />
+                  <span className='ml-2'>
                     <Link href={item.githubURL} rel="noopener noreferrer" target="_blank">
                       {item.githubURL}
                     </Link>
                   </span>
+                </div>
+                <div className='md:hidden text-muted-foreground items-center mx-auto cursor-pointer'>
+                  <Link className='flex items-center gap-2' href={item.githubURL} rel="noopener noreferrer" target="_blank">
+                    GitHub Repository
+                    <ExternalLink size={18} />
+                  </Link>
                 </div>
               </div>
             </div>

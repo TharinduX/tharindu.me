@@ -17,7 +17,7 @@ const Hero = () => {
           I'm Tharindu, and welcome to my portfolio.
         </p>
       </div>
-      <div className='absolute mt-64 flex justify-center items-end pb-10 -z-50'>
+      <div className='absolute mt-52 flex justify-center items-end pb-10 -z-50'>
         <div className='circle rounded-full'></div>
       </div>
     </section>
