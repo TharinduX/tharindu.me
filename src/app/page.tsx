@@ -1,5 +1,3 @@
-'use client';
-
 import Hero from '@/components/Hero';
 import Project from '@/components/Project';
 import { getProjects } from '@/queries'

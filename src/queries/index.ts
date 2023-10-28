@@ -1,7 +1,8 @@
 import { groq } from 'next-sanity';
+import { ProjectTypes } from '../types';
 import client from '../../sanity/lib/client';
 
-export async function getProjects() {
+export async function getProjects(): Promise<ProjectTypes[]> {
   return client.fetch(
     groq`*[_type == "project"] | order(_createdAt desc) {
       _id,

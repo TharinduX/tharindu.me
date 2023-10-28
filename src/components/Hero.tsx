@@ -19,7 +19,7 @@ const Hero = () => {
         </p>
 
       </div>
-      <div className='absolute mt-52 flex justify-center items-end pb-10 -z-50'>
+      <div className='absolute mt-52 flex justify-center items-center pb-10 -z-50'>
         <div className='circle rounded-full'></div>
       </div>
     </section>
