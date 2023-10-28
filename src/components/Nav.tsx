@@ -20,7 +20,7 @@ const Nav = () => {
 
   return (
     <header className={path.startsWith("/dashboard") ? "hidden" : ""}>
-      <nav className='fixed w-full px-10 md:border z-50 bg-background'>
+      <nav className='fixed w-full px-10 md:border-b-1 md:border z-50 bg-background'>
         <div className='max-w-screen-lg flex items-center justify-between mx-auto p-4'>
           <div className='text-xl font-semibold'>
             <Link href='/'>Tharindu<span className='text-primary'>X</span></Link>

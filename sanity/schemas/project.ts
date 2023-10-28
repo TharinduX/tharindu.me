@@ -1,5 +1,3 @@
-import { defineField, defineArrayMember } from 'sanity';
-
 const project = {
   name: 'project',
   title: 'Projects',
@@ -13,25 +11,25 @@ const project = {
       options: { hotspot: true },
       validation: (Rule: any) => Rule.required(),
     },
-    defineField({
+    {
       name: 'projectName',
       title: 'Project Name',
       type: 'string',
       validation: (Rule: any) => Rule.required(),
-    }),
-    defineField({
+    },
+    {
       name: 'techStack',
       type: 'array',
       title: 'Tech stack',
       validation: (Rule: any) => Rule.required(),
       of: [
-        defineArrayMember({
+        {
           type: 'object',
           name: 'stack',
           fields: [{ type: 'string', name: 'name' }],
-        }),
+        },
       ],
-    }),
+    },
     {
       name: 'projectImage',
       title: 'Project Image',
@@ -63,28 +61,28 @@ const project = {
       rows: 4,
       validation: (Rule: any) => Rule.required(),
     },
-    defineField({
+    {
       name: 'githubURL',
       title: 'GitHub URL',
       type: 'url',
       validation: (Rule: any) => Rule.required(),
-    }),
-    defineField({
+    },
+    {
       name: 'features',
       type: 'array',
       title: 'Features',
       validation: (Rule: any) => Rule.required(),
       of: [
-        defineArrayMember({
+        {
           type: 'object',
           name: 'feature',
           fields: [
             { type: 'string', name: 'title' },
             { type: 'text', name: 'description' },
           ],
-        }),
+        },
       ],
-    }),
+    },
     {
       title: 'Project Date',
       name: 'projectDate',

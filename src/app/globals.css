@@ -65,8 +65,8 @@
   height: 20rem;
   background: linear-gradient(
     to bottom,
-    hsl(var(--primary)) 100%,
-    hsl(var(--primary-foreground)) 0%
+    hsl(var(--primary)) 80%,
+    hsl(var(--primary-foreground)) 20%
   );
   filter: blur(100px);
 }
