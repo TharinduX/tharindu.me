@@ -9,7 +9,7 @@ const Footer = () => {
   const path = usePathname();
   return (
     <footer className={path.startsWith("/dashboard") ? "hidden" : ""}>
-      <div className='bg-background w-full p-10 border-t-1 border '>
+      <div className='bg-background w-full p-10 border-t'>
         <div className='flex flex-col md:flex-row md:justify-between max-w-screen-md lg:max-w-screen-lg  items-center gap-5 mx-auto'>
           <div className='text-muted-foreground'>
             © 2023 Tharindu. All rights reserved.
