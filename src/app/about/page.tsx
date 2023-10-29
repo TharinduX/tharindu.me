@@ -16,13 +16,19 @@ const page = () => {
           <div className='text-3xl lg:text-4xl font-bold mt-5 text-foreground'>
             About Me
           </div>
-          <div className='text-muted-foreground mt-5'>
+          <div className='text-muted-foreground mt-5 leading-relaxed'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh est, hendrerit mattis ultricies non, porta sit amet enim. Nunc a dolor eget odio faucibus hendrerit a eget libero. Ut dapibus nisi nulla, et viverra diam ultrices quis. Nulla dignissim, magna id mollis mollis, velit dui molestie magna, vitae varius felis neque rutrum lectus. Curabitur efficitur blandit bibendum. Etiam aliquet id ipsum vel dignissim. Suspendisse ut mattis ligula. Vivamus sapien quam, ornare sed risus nec, tristique dictum neque. Vivamus a magna convallis, sodales est eget, tincidunt dolor. Nulla vel ornare justo, pretium feugiat nisi. Morbi varius nisl ac purus rutrum, vitae porttitor tellus malesuada. Etiam pellentesque dapibus nunc nec ultrices.
           </div>
           <div className='text-3xl lg:text-4xl font-bold mt-5 text-foreground'>
             Experience
           </div>
-          <div className='text-muted-foreground mt-5'>
+          <div className='text-muted-foreground mt-5 leading-relaxed'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh est, hendrerit mattis ultricies non, porta sit amet enim. Nunc a dolor eget odio faucibus hendrerit a eget libero. Ut dapibus nisi nulla, et viverra diam ultrices quis. Nulla dignissim, magna id mollis mollis, velit dui molestie magna, vitae varius felis neque rutrum lectus.
+          </div>
+          <div className='text-3xl lg:text-4xl font-bold mt-5 text-foreground'>
+            Contributing
+          </div>
+          <div className='text-muted-foreground mt-5 leading-relaxed'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh est, hendrerit mattis ultricies non, porta sit amet enim. Nunc a dolor eget odio faucibus hendrerit a eget libero. Ut dapibus nisi nulla, et viverra diam ultrices quis. Nulla dignissim, magna id mollis mollis, velit dui molestie magna, vitae varius felis neque rutrum lectus.
           </div>
         </div>

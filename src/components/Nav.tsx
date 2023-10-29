@@ -49,14 +49,14 @@ const Nav = () => {
           </div>
         </div>
         {isMobileMenuOpen && (
-          <div className='flex md:hidden flex-col p-5 items-center gap-5'>
-            <Link className='px-5 rounded-full py-2 hover:bg-accent duration-300' onClick={closeMobileMenu} href="/">Home
+          <div className='flex md:hidden flex-col p-5 items-center divide-y w-full'>
+            <Link className='flex justify-center px-5 w-full py-4 hover:bg-accent duration-300' onClick={closeMobileMenu} href="/">Home
             </Link>
-            <Link onClick={closeMobileMenu} className='px-5 rounded-full py-2 hover:bg-accent duration-300' href="/about">About
+            <Link onClick={closeMobileMenu} className='flex justify-center px-5 w-full  py-4 hover:bg-accent duration-300' href="/about">About
             </Link>
-            <Link onClick={closeMobileMenu} className='px-5 rounded-full py-2 hover:bg-accent duration-300' href="/blog">Blog
+            <Link onClick={closeMobileMenu} className='flex justify-center px-5 w-full  py-4 hover:bg-accent duration-300' href="/blog">Blog
             </Link>
-            <Link onClick={closeMobileMenu} className='px-5 rounded-full py-2 hover:bg-accent duration-300' href="/contact">Contact
+            <Link onClick={closeMobileMenu} className='flex justify-center px-5 w-full  py-4 hover:bg-accent duration-300' href="/contact">Contact
             </Link>
           </div>
         )}

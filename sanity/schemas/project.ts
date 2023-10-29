@@ -1,4 +1,6 @@
-const project = {
+import { defineType } from 'sanity';
+
+export default defineType({
   name: 'project',
   title: 'Projects',
   type: 'document',
@@ -94,6 +96,4 @@ const project = {
       },
     },
   ],
-};
-
-export default project;
+});

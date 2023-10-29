@@ -1,4 +1,6 @@
-const About = {
+import { defineType } from 'sanity';
+
+export default defineType({
   name: 'about',
   title: 'About',
   type: 'document',
@@ -25,7 +27,12 @@ const About = {
       rows: 5,
       validation: (Rule: any) => Rule.required(),
     },
+    {
+      name: 'contributing',
+      title: 'Contributing',
+      type: 'text',
+      rows: 5,
+      validation: (Rule: any) => Rule.required(),
+    },
   ],
-};
-
-export default About;
+});
