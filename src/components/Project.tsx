@@ -13,15 +13,15 @@ const Project = async () => {
     <div>
       {projects && projects.map((item, index) => (
         <div key={index} className='relative h-full wrap' >
-          <div className='border-1 border absolute h-full left-[50%]' ></div>
+          <div className='border-1 border absolute h-full left-[50%] last:h-0' ></div>
           <div className='items-center flex flex-col relative'>
-            <div className='bg-accent rounded-lg p-0.5'>
-              <div className='px-4 py-2 flex gap-3 text-muted-foreground border rounded-md text-md bg-background shadow-sm'>
-                <CalendarIcon /> {new Date(item.projectDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-              </div>
+            <div className='relative px-4 py-2 flex gap-3 text-muted-foreground border rounded-md text-md bg-background shadow-sm'>
+              <CalendarIcon /> {new Date(item.projectDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </div>
-            <div className='max-w-screen-xl md:w-[80%] lg:w-[65%] p-0.5 bg-accent mt-8 rounded-2xl border mb-8 first:mb-0 '>
-              <div className='w-full h-full flex flex-col bg-card rounded-2xl border dark:shadow-glow dark:shadow-primary/30  overflow-hidden shadow-glow shadow-accent'>
+            <div className='rounded-2xl max-w-screen-xl mt-8 mb-8 md:w-[80%] lg:w-[65%] shadow-lg dark:shadow-glow dark:shadow-primary/20'>
+              <div className='relative border w-full h-full flex flex-col bg-card rounded-2xl'>
+                <div className='hidden dark:block absolute -bottom-px left-11 right-20 h-px bg-gradient-to-r from-primary/0 via-primary to-primary/0'></div>
+                <div className='hidden dark:block absolute -top-px left-20 right-11 h-px bg-gradient-to-r from-primary/0 via-primary to-primary/0'></div>
                 <div className='flex w-full bg-accent/50 p-5 border-b '>
                   <div className='w-[80%] flex mx-auto items-center rounded-lg h-10 bg-accent border shadow-inner p-2'>
                     <div className='md:flex text-muted-foreground items-center mx-auto cursor-pointer hidden'>
@@ -86,6 +86,7 @@ const Project = async () => {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       ))}

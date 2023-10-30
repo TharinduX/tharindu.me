@@ -36,6 +36,7 @@ export async function getPosts() {
     groq`*[_type == "post"] | order(_createdAt desc) {
       _id,
       title,
+      "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
       slug,
       mainImage {"image": asset->url, "alt": asset->alt},
       categories[]-> {title},

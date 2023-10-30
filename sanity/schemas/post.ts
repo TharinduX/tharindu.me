@@ -9,11 +9,19 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule: any) => Rule.required(),
+    }),
+    defineField({
+      name: 'subtitle',
+      title: 'Sub Title',
+      type: 'string',
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      validation: (Rule: any) => Rule.required(),
       options: {
         source: 'title',
         maxLength: 96,
@@ -24,11 +32,13 @@ export default defineType({
       title: 'Author',
       type: 'reference',
       to: { type: 'author' },
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
+      validation: (Rule: any) => Rule.required(),
       options: {
         hotspot: true,
       },
@@ -45,16 +55,19 @@ export default defineType({
       title: 'Categories',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'category' } }],
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      validation: (Rule: any) => Rule.required(),
     }),
   ],
   preview: {

@@ -83,5 +83,5 @@
       hsl(var(--ruler)) 0 1px,
       transparent 0.5px 100%
     );
-  background-size: 200px 200px;
+  background-size: 150px 150px;
 }

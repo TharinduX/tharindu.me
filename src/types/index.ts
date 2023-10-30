@@ -29,14 +29,18 @@ export type AboutTypes = {
 };
 
 export type PostTypes = {
-  _id: String;
-  title: String;
-  slug: String;
+  _id: string;
+  title: string;
+  subtitle: string;
+  slug: {
+    current: string;
+  };
   mainImage: {
     image: HTMLImageElement;
-    alt: String;
+    alt: string;
   };
-  categories: { title: String }[];
+  categories: { title: string }[];
   publishedAt: Date;
   body: PortableTextBlock[];
+  estimatedReadingTime: number;
 };
