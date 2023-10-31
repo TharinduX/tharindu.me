@@ -39,6 +39,7 @@ export default defineType({
         decorators: [
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
+          { title: 'Code', value: 'code' },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -54,7 +55,33 @@ export default defineType({
               },
             ],
           },
+          {
+            name: 'internalLink',
+            type: 'object',
+            title: 'Internal link',
+            fields: [
+              {
+                name: 'reference',
+                type: 'reference',
+                title: 'Reference',
+                to: [{ type: 'post' }],
+              },
+            ],
+          },
         ],
+      },
+    }),
+    defineArrayMember({
+      type: 'code',
+      title: 'Code Block',
+      options: {
+        language: 'javascript',
+        languageAlternatives: [
+          { title: 'Javascript', value: 'javascript' },
+          { title: 'HTML', value: 'html' },
+          { title: 'CSS', value: 'css' },
+        ],
+        withFilename: true,
       },
     }),
     // You can add additional types here. Note that you can't use

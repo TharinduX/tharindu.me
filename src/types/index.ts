@@ -39,6 +39,10 @@ export type PostTypes = {
     image: HTMLImageElement;
     alt: string;
   };
+  author: {
+    name: string;
+    image: HTMLImageElement;
+  };
   categories: { title: string }[];
   publishedAt: Date;
   body: PortableTextBlock[];

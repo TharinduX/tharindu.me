@@ -67,7 +67,6 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
-      validation: (Rule: any) => Rule.required(),
     }),
   ],
   preview: {
