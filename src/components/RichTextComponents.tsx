@@ -57,7 +57,7 @@ export const RichTextComponents = {
       )
     },
     code: ({ children }: any) => (
-      <code className='bg-primary/20 rounded-md p-0.5 text-primary'>{children}</code>
+      <code className='bg-accent border border-foreground/20 rounded-lg p-1 text-foreground items-center'>{children}</code>
 
     )
   }

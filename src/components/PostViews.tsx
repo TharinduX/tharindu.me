@@ -1,9 +1,7 @@
 import { useEffect } from 'react';
 import useSWR from 'swr';
 
-
-
-export default function ViewCounter({ slug }: any) {
+function ViewCounter({ slug }: any) {
 
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -20,3 +18,6 @@ export default function ViewCounter({ slug }: any) {
 
   return (`${views ? views : '–'}`);
 }
+
+
+export default ViewCounter;
