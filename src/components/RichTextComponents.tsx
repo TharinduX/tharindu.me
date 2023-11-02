@@ -4,14 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { urlForImage } from '../../sanity/lib/image'
 import ClientSyntax from './ClientSyntax'
-
+import { ExternalLink } from 'lucide-react'
 
 export const RichTextComponents = {
   types: {
     image: ({ value }: any) => {
       return (
-        <div className='relative w-full h-96 m-10 mx-auto'>
-          <Image className='object-contain' src={urlForImage(value)} alt='blog post image' fill />
+        <div className='relative w-full h-72 md:h-96  m-10 mx-auto'>
+          <Image className='object-contain' width={1000} height={765} src={urlForImage(value)} alt='blog post image' />
         </div>
       )
     },
@@ -51,11 +51,15 @@ export const RichTextComponents = {
       const rel = !value.href.startsWith("/") ? "noopener noreferrer" : undefined;
 
       return (
-        <Link href={value.href} rel={rel} className='underline text-primary decoration-primary hover:decoration-accent'>
-          {children}
-        </Link>
+        <Link href={value.href} rel={rel} className='underline text-primary decoration-primary hover:decoration-accent gap-1 flex items-center'>
+          {children}<ExternalLink size={15} />
+        </Link >
       )
     },
+    code: ({ children }: any) => (
+      <code className='bg-primary/20 rounded-md p-0.5 text-primary'>{children}</code>
+
+    )
   }
 }
 

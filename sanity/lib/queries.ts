@@ -14,6 +14,7 @@ export async function getProjects() {
       projectImage {"image": asset->url},
       techStack,
       projectDate,
+      likes
     }`,
     { cache: 'no-store' }
   );
@@ -26,6 +27,7 @@ export async function getAbout() {
       aboutImage {"image": asset->url},
       aboutMe,
       experience,
+      contributing,
     }`,
     { cache: 'no-store' }
   );
@@ -45,4 +47,18 @@ export async function getPosts() {
     }`,
     { cache: 'no-store' }
   );
+}
+
+export async function getPost(slug: any) {
+  const query = groq`
+  *[_type == "post" && slug.current == $slug][0]
+  {
+   ...,
+   mainImage,
+   author-> {"name":name, "image": image.asset->url},
+   categories[]->
+  }
+ `;
+
+  return client.fetch(query, { slug });
 }

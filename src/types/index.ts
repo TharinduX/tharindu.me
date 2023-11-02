@@ -15,6 +15,7 @@ export type ProjectTypes = {
   techStack: String[];
   projectDate: Date;
   content: PortableTextBlock[];
+  likes: number;
 };
 
 export type AboutTypes = {

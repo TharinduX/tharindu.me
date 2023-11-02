@@ -1,14 +1,20 @@
 'use client'
-import react, { useState } from 'react'
+import react, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { urlForImage } from '../../sanity/lib/image'
 import { Eye, Heart } from 'lucide-react';
+import ViewCounter from './PostViews';
 
 const ClientSideBlog = ({ post }: any) => {
 
-  const handleLike = () => {
+  const handleLike = async () => {
     const plusOne = document.querySelector('.plus-one')!
-    plusOne.classList.remove('hidden')
+    try {
+      plusOne.classList.remove('hidden')
+    }
+    catch (err) {
+      console.log(err)
+    }
     setTimeout(() => {
       plusOne.classList.add('hidden')
     }, 500)
@@ -26,14 +32,14 @@ const ClientSideBlog = ({ post }: any) => {
             <div className='text-xs text-muted-foreground'>{new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
           </div>
         </div>
-        <div className='text-muted-foreground flex gap-2 text-sm divide-x-2'>
+        <div className='text-muted-foreground flex flex-col gap-1 md:gap-2  md:divide-x-2 md:flex-row text-xs md:text-sm '>
           <div className='flex gap-2 px-3'>
             <Eye size={18} />
-            425
+            <ViewCounter slug={post.slug.current} />
           </div>
           <div className='flex gap-2 pl-3'>
             <Heart size={18} />
-            425
+            400
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ const Project = async () => {
                   <div className="p-5 border-dashed border rounded-lg w-full relative">
                     <div className='px-3 absolute -top-4 left-5 right-0 z-10 text-muted-foreground text-md bg-card max-w-fit'>Screenshot</div>
                     <div className='h-full border rounded-lg bg-accent/50'>
-                      <Image priority={true} className='object-cover rounded-lg h-full' src={item.projectImage?.image} width={800} height={900} alt="Screenshot of the application" />
+                      <Image priority className='object-cover rounded-lg h-full' src={item.projectImage?.image} width={800} height={900} alt="Screenshot of the application" />
                     </div>
                   </div>
                   <div className='flex flex-col gap-7 w-full'>

@@ -23,7 +23,7 @@ const Nav = () => {
       <nav className='fixed w-full px-10 md:border-b z-50 bg-background'>
         <div className='max-w-screen-lg flex items-center justify-between mx-auto p-4'>
           <div className='text-xl font-semibold'>
-            <Link href='/'>Tharindu<span className='text-primary'>X</span></Link>
+            <Link href='/'>Tharindu<span className='text-primary'>.me</span></Link>
           </div>
           <div className='flex items-center'>
             <div className='hidden md:flex gap-2'>
