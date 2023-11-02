@@ -1,13 +1,10 @@
 'use client'
-
+import react, { useState } from 'react'
 import Image from 'next/image'
 import { urlForImage } from '../../sanity/lib/image'
 import { Eye, Heart } from 'lucide-react';
 
-
-
 const ClientSideBlog = ({ post }: any) => {
-
 
   const handleLike = () => {
     const plusOne = document.querySelector('.plus-one')!

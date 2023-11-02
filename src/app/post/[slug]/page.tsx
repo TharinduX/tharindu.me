@@ -7,6 +7,7 @@ import { ArrowLeft } from 'lucide-react';
 import { PortableText } from '@portabletext/react'
 import ClientSideBlog from '@/components/ClientSideBlog'
 import { RichTextComponents } from '@/components/RichTextComponents'
+import PostShare from '@/components/PostShare'
 
 type Props = {
   params: {
@@ -44,8 +45,12 @@ async function Post({ params: { slug } }: Props) {
           <div className='mt-3 text-md mb-3'>
             <PortableText value={post.body} components={RichTextComponents} />
           </div>
+          <div>
+            <PostShare post={post} />
+          </div>
         </div>
       </section>
+
     </article >
   )
 }

@@ -6,6 +6,7 @@ import ReactSyntaxHighlighter from 'react-syntax-highlighter';
 import { Copy, Check } from 'lucide-react'
 import { Button } from './ui/button';
 
+
 const ClientSyntax = ({ value }: any) => {
   const [copied, setCopied] = useState(false)
 
@@ -16,23 +17,23 @@ const ClientSyntax = ({ value }: any) => {
       setCopied(false)
     }, 1000)
   }
+
   return (
     <>
-      <div className='flex'>
-        <div className='text-muted-foreground mb-2'>{value.filename}</div>
+      <div className='flex mt-5'>
+        <div className='px-5 py-2 rounded-t-lg bg-background border-t border-x text-foreground'>{value.filename}</div>
       </div>
-      <div className='rounded-lg relative overflow-hidden'>
+      <div className='rounded-r-lg rounded-bl-lg  relative overflow-hidden'>
         <ReactSyntaxHighlighter language='javascript' style={anOldHope} wrapLines >
           {value.code}
         </ReactSyntaxHighlighter>
-        <Button className='absolute text-foreground ml-2 bg-background hover:bg-accent border border-muted-foreground/30 rounded-md px-2 py-1 cursor-pointer top-0 right-0' onClick={copyToClipboard}>
+        <Button className='absolute text-foreground ml-2 bg-background hover:bg-accent border border-muted-foreground/30 rounded-md px-2 py-1 cursor-pointer top-3 right-3' onClick={copyToClipboard}>
 
           <div className='flex items-center gap-2'>
             {copied ? <Check size={15} /> : <Copy size={15} />}
             {copied ? 'Copied!' : 'Copy'}
           </div>
         </Button>
-
       </div>
     </>
   )

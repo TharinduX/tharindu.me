@@ -55,7 +55,7 @@ export const RichTextComponents = {
           {children}
         </Link>
       )
-    }
+    },
   }
 }
 

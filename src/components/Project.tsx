@@ -22,7 +22,7 @@ const Project = async () => {
               <div className='relative border w-full h-full flex flex-col bg-card rounded-2xl'>
                 <div className='hidden dark:block absolute -bottom-px left-11 right-20 h-px bg-gradient-to-r from-primary/0 via-primary to-primary/0'></div>
                 <div className='hidden dark:block absolute -top-px left-20 right-11 h-px bg-gradient-to-r from-primary/0 via-primary to-primary/0'></div>
-                <div className='flex w-full bg-accent/50 p-5 border-b '>
+                <div className='flex w-full bg-accent/50 p-5 border-b rounded-lg'>
                   <div className='w-[80%] flex mx-auto items-center rounded-lg h-10 bg-accent border shadow-inner p-2'>
                     <div className='md:flex text-muted-foreground items-center mx-auto cursor-pointer hidden'>
                       <FaGithub size={18} />
