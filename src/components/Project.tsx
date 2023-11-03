@@ -6,7 +6,7 @@ import React, { cache } from 'react';
 import { getProjects } from '../../sanity/lib/queries'
 import { ProjectTypes } from '@/types';
 
-export const revalidate = 120;
+export const revalidate = 60;
 
 const Project = async () => {
   const projects = await getProjects() as ProjectTypes[];

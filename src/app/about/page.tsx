@@ -3,7 +3,7 @@ import { getAbout } from '../../../sanity/lib/queries'
 import { AboutTypes } from '@/types'
 import Image from 'next/image';
 
-export const revalidate = 120;
+export const revalidate = 60;
 
 const page = async () => {
   const about = await getAbout() as AboutTypes[];
