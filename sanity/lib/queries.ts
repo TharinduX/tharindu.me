@@ -14,9 +14,7 @@ export async function getProjects() {
       projectImage {"image": asset->url},
       techStack,
       projectDate,
-      likes
-    }`,
-    { cache: 'no-store' }
+    }`
   );
 }
 
