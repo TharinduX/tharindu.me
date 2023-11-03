@@ -109,7 +109,7 @@ const ClientSideBlog = ({ post }: any) => {
       <div className='h-full mt-5 rounded-lg bg-gradient-to-b from-primary/20 to-primary border p-0.5'>
         <div className='relative h-full w-full group cursor-pointer'>
           <Image priority={true} className='object-contain w-full h-full rounded-lg' src={urlForImage(post.mainImage)} width={1200} height={600} alt={post.mainImage.alt} />
-          <Heart className='heart absolute text-white -bottom-5 -right-5 bg-primary rounded-full p-2 transition ease-in-out hover:scale-150 hover:rotate-[360deg] duration-500' size={40} onClick={handleLike} />
+          <Heart className='heart absolute text-white -bottom-5 -right-5 bg-primary rounded-full p-2 transition ease-in-out md:hover:scale-150 hover:rotate-[360deg] duration-500' size={40} onClick={handleLike} />
           <p className='plus-one absolute hidden bottom-3 -right-12 text-primary text-lg font-bold'>+1</p>
           <p className='minus-one absolute hidden bottom-3 -right-12 text-primary text-lg font-bold'>-1</p>
         </div>
