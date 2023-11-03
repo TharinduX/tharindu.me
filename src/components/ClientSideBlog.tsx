@@ -1,51 +1,87 @@
 'use client'
-import react, { useEffect, useState } from 'react'
+import react, { use, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { urlForImage } from '../../sanity/lib/image'
 import { Eye, Heart } from 'lucide-react';
 import ViewCounter from './PostViews';
 import LikeCounter from './PostLikes';
+import { setCookie, hasCookie, deleteCookie } from 'cookies-next'
+
 
 const ClientSideBlog = ({ post }: any) => {
-  const [liked, setLiked] = useState(false)
 
-  console.log(liked)
+  const [liked, setLiked] = useState(false)
+  useEffect(() => {
+    const heart = document.querySelector('.heart')!
+    hasCookie('liked', post.slug.current) ? setLiked(true) : setLiked(false)
+    heart.classList.add('fill-white')
+  }, [])
+
   const handleLike = async () => {
     const plusOne = document.querySelector('.plus-one')!
     const heart = document.querySelector('.heart')!
     const minusOne = document.querySelector('.minus-one')!
-    try {
-      setLiked(!liked)
-      if (liked) {
-        const res = await fetch(`/api/likes/${post.slug.current}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ liked: !liked })
-        })
-        heart.classList.add('fill-white')
-        plusOne.classList.remove('hidden')
-      } if (!liked) {
-        const res = await fetch(`/api/likes/${post.slug.current}`, {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ liked: !liked })
-        })
-        heart.classList.remove('fill-white')
-        minusOne.classList.remove('hidden')
-      }
+    setLiked(!liked)
+    if (liked) {
+      const res = await fetch(`/api/likes/${post.slug.current}`, {
+        method: 'POST'
+      })
+      setCookie('liked', post.slug.current)
+      plusOne.classList.remove('hidden')
+      heart.classList.add('fill-white')
+    } else {
+      deleteCookie('liked', post.slug.current)
+      const res = await fetch(`/api/likes/${post.slug.current}`, {
+        method: 'DELETE'
+      })
+      heart.classList.remove('fill-white')
+      minusOne.classList.remove('hidden')
     }
-    catch (err) {
-      console.log(err)
-    }
+
     setTimeout(() => {
       plusOne.classList.add('hidden')
       minusOne.classList.add('hidden')
     }, 500)
+
   }
+
+
+  // const handleLike = async () => {
+  //   const plusOne = document.querySelector('.plus-one')!
+  //   const heart = document.querySelector('.heart')!
+  //   const minusOne = document.querySelector('.minus-one')!
+  //   try {
+  //     setLiked(!liked)
+  //     if (liked) {
+  //       const res = await fetch(`/api/likes/${post.slug.current}`, {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json'
+  //         },
+  //         body: JSON.stringify({ liked: !liked })
+  //       })
+  //       heart.classList.add('fill-white')
+  //       plusOne.classList.remove('hidden')
+  //     } if (!liked) {
+  //       const res = await fetch(`/api/likes/${post.slug.current}`, {
+  //         method: 'DELETE',
+  //         headers: {
+  //           'Content-Type': 'application/json'
+  //         },
+  //         body: JSON.stringify({ liked: !liked })
+  //       })
+  //       heart.classList.remove('fill-white')
+  //       minusOne.classList.remove('hidden')
+  //     }
+  //   }
+  //   catch (err) {
+  //     console.log(err)
+  //   }
+  //   setTimeout(() => {
+  //     plusOne.classList.add('hidden')
+  //     minusOne.classList.add('hidden')
+  //   }, 500)
+  // }
 
   return (
     <div>
