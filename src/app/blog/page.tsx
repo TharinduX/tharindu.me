@@ -3,6 +3,8 @@ import { getPosts } from '../../../sanity/lib/queries'
 import { PostTypes } from '@/types';
 import PostList from '@/components/PostList';
 
+export const revalidate = 60;
+
 const page = async () => {
   const allPosts = await getPosts() as PostTypes[];
   return (
