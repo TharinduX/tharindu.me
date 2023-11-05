@@ -26,8 +26,7 @@ export async function getAbout() {
       aboutMe,
       experience,
       contributing,
-    }`,
-    { cache: 'no-store' }
+    }`
   );
 }
 
@@ -42,8 +41,7 @@ export async function getPosts() {
       categories[]-> {title},
       publishedAt,
       body,
-    }`,
-    { cache: 'no-store' }
+    }`
   );
 }
 
