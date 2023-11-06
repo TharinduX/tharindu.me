@@ -16,22 +16,20 @@ export default defineType({
     {
       name: 'aboutMe',
       title: 'About Me',
-      type: 'text',
-      rows: 5,
+      type: 'blockContent',
       validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'experience',
       title: 'Experience',
-      type: 'text',
-      rows: 5,
+      type: 'blockContent',
+
       validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'contributing',
       title: 'Contributing',
-      type: 'text',
-      rows: 5,
+      type: 'blockContent',
       validation: (Rule: any) => Rule.required(),
     },
   ],

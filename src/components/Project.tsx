@@ -18,12 +18,12 @@ const Project = ({ project, key }: ProjectProps) => {
         <div className='relative px-4 py-2 flex gap-3 text-muted-foreground border rounded-md text-md bg-background shadow-sm'>
           <CalendarIcon /> {new Date(project.projectDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
         </div>
-        <div className='rounded-2xl max-w-screen-xl mt-8 mb-8 md:w-[80%] lg:w-[65%] shadow-lg dark:shadow-glow dark:shadow-primary/20'>
+        <div className='rounded-2xl max-w-screen-xl mt-8 mb-8 md:w-[80%] lg:w-[75%] shadow-lg dark:shadow-glow dark:shadow-primary/20'>
           <div className='relative border w-full h-full flex flex-col bg-card rounded-2xl'>
             <div className='hidden dark:block absolute -bottom-px left-11 right-20 h-px bg-gradient-to-r from-primary/0 via-primary to-primary/0'></div>
             <div className='hidden dark:block absolute -top-px left-20 right-11 h-px bg-gradient-to-r from-primary/0 via-primary to-primary/0'></div>
             <div className='flex w-full bg-accent/50 p-5 border-b rounded-lg'>
-              <div className='w-[80%] flex mx-auto items-center rounded-lg h-10 bg-accent border shadow-inner p-2'>
+              <div className='w-[50%] flex mx-auto items-center rounded-lg h-10 bg-accent border shadow-inner p-2'>
                 <div className='md:flex text-muted-foreground items-center mx-auto cursor-pointer hidden'>
                   <FaGithub size={18} />
                   <span className='ml-2'>

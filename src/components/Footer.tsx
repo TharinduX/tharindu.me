@@ -24,7 +24,7 @@ const Footer = () => {
             <a href='https://www.instagram.com/tharindu.me/' target='_blank' rel="noopener noreferrer">
               <Instagram size={20} className='text-muted-foreground hover:text-foreground' />
             </a>
-            <a href='https://www.x.com/itzJambole/' target='_blank' rel="noopener noreferrer">
+            <a href='https://www.x.com/tharindume/' target='_blank' rel="noopener noreferrer">
               <FaXTwitter size={20} className='text-muted-foreground hover:text-foreground' />
             </a>
           </div>

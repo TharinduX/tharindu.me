@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { Separator } from "@/components/ui/separator"
 
 const Hero = () => {
   return (
@@ -14,12 +15,13 @@ const Hero = () => {
           className='rounded-full border-2 border-primary-foreground'
         />
         <h1 className='text-4xl font-extrabold'>Hello,</h1>
-        <p className='text-lg text-muted-foreground'>
-          I'm Tharindu, and welcome to my portfolio.
-        </p>
-
+        <div className='divider max-w-lg'>
+          <p className='text-lg text-muted-foreground'>
+            I'm Tharindu, and welcome to my portfolio.
+          </p>
+        </div>
       </div>
-      <div className='absolute mt-72 flex justify-center items-center pb-10 -z-50'>
+      <div className='hidden absolute mt-72 dark:flex justify-center items-center pb-10 -z-50'>
         <div className='circle rounded-full'></div>
       </div>
     </section>

@@ -2,6 +2,8 @@ import React from 'react'
 import { getAbout } from '../../../sanity/lib/queries'
 import { AboutTypes } from '@/types'
 import Image from 'next/image';
+import { PortableText } from '@portabletext/react'
+import { RichTextComponents } from '@/components/RichTextComponents'
 
 export const revalidate = 60;
 
@@ -25,19 +27,19 @@ const page = async () => {
             About Me
           </div>
           <div className='text-muted-foreground mt-5 leading-relaxed'>
-            {about[0].aboutMe}
+            <PortableText value={about[0].aboutMe} components={RichTextComponents} />
           </div>
           <div className='text-3xl lg:text-4xl font-bold mt-5 text-foreground'>
             Experience
           </div>
           <div className='text-muted-foreground mt-5 leading-relaxed'>
-            {about[0].experience}
+            <PortableText value={about[0].experience} components={RichTextComponents} />
           </div>
           <div className='text-3xl lg:text-4xl font-bold mt-5 text-foreground'>
             Contributing
           </div>
           <div className='text-muted-foreground mt-5 leading-relaxed'>
-            {about[0].contributing}
+            <PortableText value={about[0].contributing} components={RichTextComponents} />
           </div>
         </div>
       </div>

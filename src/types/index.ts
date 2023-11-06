@@ -21,9 +21,9 @@ export type AboutTypes = {
   aboutImage: {
     image: HTMLImageElement;
   };
-  aboutMe: String;
-  experience: String;
-  contributing: String;
+  aboutMe: PortableTextBlock[];
+  experience: PortableTextBlock[];
+  contributing: PortableTextBlock[];
 };
 
 export type PostTypes = {

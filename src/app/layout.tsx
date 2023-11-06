@@ -6,6 +6,7 @@ import Nav from '@/components/Nav';
 
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer';
+import toast, { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
+          <Toaster />
           <Nav />
           {children}
           <Footer />
