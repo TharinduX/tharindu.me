@@ -31,7 +31,7 @@ const ClientAllPosts = ({ posts, categories }: Props) => {
   return (
     <div>
       <div className='mt-5 flex flex-wrap max-w-lg w-full gap-3 justify-center items-center mx-auto'>
-        <div onClick={() => clearSelectedCategory()} className={`bg-accent/70 rounded-full px-5 py-1 text-muted-foreground border hover:bg-foreground hover:text-background hover:border-background cursor-pointer ${!selectedCategory ? 'border-background bg-foreground text-background' : ''
+        <div onClick={() => clearSelectedCategory()} className={`bg-accent/70 rounded-full px-5 py-1 text-foreground border hover:bg-foreground hover:text-background hover:border-background cursor-pointer ${!selectedCategory ? 'border-background bg-foreground text-background' : ''
           }`}>
           All
         </div>
