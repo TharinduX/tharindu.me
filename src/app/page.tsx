@@ -1,23 +1,22 @@
-import ComingSoon from '@/components/ComingSoon';
 import Hero from '@/components/Hero';
-import Nav from '@/components/Nav';
 import Project from '@/components/Project';
+import { ProjectTypes } from '@/types';
+import { getProjects } from '../../sanity/lib/queries'
 
-export default function Home() {
-  if (process.env.NODE_ENV === 'production') {
-    return (
-      <ComingSoon />
-    );
-  } else {
-    return (
-      <main>
-        <Nav />
-        <div className='ruler'>
-          <Hero />
-          <Project />
-          <Project />
-        </div>
-      </main>
-    );
-  }
+
+
+export const revalidate = 60;
+
+export default async function Home() {
+  const projects = await getProjects() as ProjectTypes[];
+
+  return (
+    <main className='ruler'>
+      <div className='absolute rounded-full h-72 w-72 blur-3xl'></div>
+      <Hero />
+      {projects.map((project) => (
+        <Project key={project._id.toString()} project={project} />
+      ))}
+    </main >
+  );
 }
