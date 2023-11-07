@@ -46,3 +46,13 @@ export type PostTypes = {
   body: PortableTextBlock[];
   estimatedReadingTime: number;
 };
+
+export type CategoryTypes = {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  description: PortableTextBlock[];
+  posts: PostTypes[];
+};

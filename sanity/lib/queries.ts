@@ -58,3 +58,13 @@ export async function getPost(slug: any) {
 
   return client.fetch(query, { slug });
 }
+
+export async function getCategories() {
+  return client.fetch(
+    groq`*[_type == "category"] | order(_createdAt desc) {
+      _id,
+      title,
+      slug,
+    }`
+  );
+}
