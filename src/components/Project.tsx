@@ -7,12 +7,11 @@ import { ProjectTypes } from '@/types';
 
 type ProjectProps = {
   project: ProjectTypes;
-  key: string;
 };
 
-const Project = ({ project, key }: ProjectProps) => {
+const Project = ({ project }: ProjectProps) => {
   return (
-    <div key={key} className='relative h-full wrap' >
+    <div className='relative h-full wrap' >
       <div className='border-1 border absolute h-full left-[50%] last:h-0' ></div>
       <div className='items-center flex flex-col relative'>
         <div className='relative px-4 py-2 flex gap-3 text-muted-foreground border rounded-md text-md bg-background shadow-sm'>
