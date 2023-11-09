@@ -15,7 +15,6 @@ const CommentsLazy = dynamic(() => import('@/components/DisqusComments'), {
     </div>
   </div>,
   ssr: false,
-  delay: 1000,
 })
 
 type Props = {
