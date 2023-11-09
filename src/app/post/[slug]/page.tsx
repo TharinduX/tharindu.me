@@ -10,11 +10,8 @@ import { RichTextComponents } from '@/components/RichTextComponents'
 import PostShare from '@/components/PostShare'
 import { getPost } from '../../../../sanity/lib/queries'
 import Link from 'next/link'
-import dynamic from 'next/dynamic';
-const CommentsLazy = dynamic(() => import('@/components/DisqusComments'), {
-  loading: () => <div className='mt-10'>Loading...</div>,
-  ssr: false,
-})
+import Comments from '@/components/Comments'
+
 
 type Props = {
   params: {
@@ -68,7 +65,7 @@ async function Post({ params: { slug } }: Props) {
             <PortableText value={post.body} components={RichTextComponents} />
           </div>
           <PostShare post={post} />
-          <CommentsLazy post={post} />
+          <Comments post={post} />
         </div>
       </section>
     </article >
