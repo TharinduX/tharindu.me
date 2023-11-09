@@ -54,6 +54,7 @@
 @layer base {
   * {
     @apply border-border;
+    @apply scroll-smooth;
   }
   body {
     @apply bg-background text-foreground;
@@ -84,4 +85,17 @@
       transparent 0.5px 100%
     );
   background-size: 150px 150px;
+}
+
+#disqus_thread {
+  color-scheme: none;
+  overflow: hidden;
+}
+
+#disqus_thread iframe {
+  margin-bottom: -54px;
+}
+
+#disqus_thread a {
+  color: hsl(var(--primary));
 }

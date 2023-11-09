@@ -24,7 +24,7 @@ const ClientSyntax = ({ value }: any) => {
         <div className='px-5 py-2 w-full rounded-t-lg bg-background border-t border-x text-foreground'>{value.filename}</div>
       </div>
       <div className='rounded-bl-lg relative overflow-hidden'>
-        <ReactSyntaxHighlighter language='javascript' style={monokaiSublime} wrapLongLines >
+        <ReactSyntaxHighlighter language='javascript' style={monokaiSublime}>
           {value.code}
         </ReactSyntaxHighlighter>
         <Button className='absolute text-foreground ml-2 bg-background hover:bg-accent border border-muted-foreground/30 rounded-md px-2 py-1 cursor-pointer top-3 right-3' onClick={copyToClipboard}>

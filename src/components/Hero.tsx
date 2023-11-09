@@ -16,8 +16,8 @@ const Hero = () => {
         />
         <h1 className='text-4xl font-extrabold'>Hello,</h1>
         <div className='divider max-w-lg'>
-          <p className='text-lg text-muted-foreground'>
-            I'm Tharindu, and welcome to my portfolio.
+          <p className='text-lg text-muted-foreground px-10 md:px-1'>
+            I'm Tharindu, and welcome to my portfolio. I'm a full-stack developer, and I love to build things.
           </p>
         </div>
       </div>
