@@ -44,17 +44,7 @@ export default defineType({
       title: 'Project Category',
       name: 'projectCategory',
       type: 'string',
-      initialValue: 'website',
       validation: (Rule: any) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Website', value: 'website' },
-          { title: 'Mobile App', value: 'mobileApp' },
-          { title: 'Desktop App', value: 'desktopApp' },
-          { title: 'API', value: 'api' },
-          { title: 'Other', value: 'other' },
-        ],
-      },
     },
     {
       name: 'projectDescription',
