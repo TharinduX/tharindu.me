@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator"
 
 const Hero = () => {
   return (
-    <section className='pt-32 px-10 flex flex-col items-center text-center gap-8 mx-auto mb-8'>
+    <section className='pt-32 px-5 flex flex-col items-center text-center gap-8 mx-auto mb-8'>
       <div className='max-w-screen-md items-center flex flex-col gap-3 relative'>
         <img
           src='https://github.com/TharinduX.png'

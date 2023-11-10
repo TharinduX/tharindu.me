@@ -14,8 +14,8 @@ const Project = ({ project }: ProjectProps) => {
     <div className='relative h-full wrap' >
       <div className='border-1 border absolute h-full left-[50%] last:h-0' ></div>
       <div className='items-center flex flex-col relative'>
-        <div className='relative px-4 py-2 flex gap-3 text-muted-foreground border rounded-md text-md bg-background shadow-sm'>
-          <CalendarIcon /> {new Date(project.projectDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        <div className='relative px-4 py-2 flex gap-3 text-muted-foreground border rounded-md text-md bg-background shadow-sm items-center'>
+          <CalendarIcon size={18} /> {new Date(project.projectDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
         </div>
         <div className='rounded-2xl max-w-screen-xl mt-8 mb-8 md:w-[80%] lg:w-[75%] shadow-lg dark:shadow-glow dark:shadow-primary/20'>
           <div className='relative border w-full h-full flex flex-col bg-card rounded-2xl'>
@@ -39,11 +39,11 @@ const Project = ({ project }: ProjectProps) => {
                 </div>
               </div>
             </div>
-            <div className='flex flex-col lg:flex-row gap-7 p-10 w-full'>
-              <div className="p-5 border-dashed border rounded-lg w-full relative">
+            <div className='flex flex-col-reverse lg:flex-row-reverse gap-7 p-10 w-full'>
+              <div className="p-5 border-dashed border rounded-lg w-full relative h-full">
                 <div className='px-3 absolute -top-4 left-5 right-0 z-10 text-muted-foreground text-md bg-card max-w-fit'>Screenshot</div>
-                <div className='h-full border rounded-lg bg-accent/50'>
-                  <Image priority className='object-cover rounded-lg h-full' src={project.projectImage?.image} width={800} height={900} alt="Screenshot of the application" />
+                <div className='max-h-fit border rounded-lg bg-accent/50'>
+                  <Image priority className='object-contain rounded-lg max-h-fit' src={project.projectImage?.image} width={800} height={900} alt="Screenshot of the application" />
                 </div>
               </div>
               <div className='flex flex-col gap-7 w-full'>
@@ -53,7 +53,7 @@ const Project = ({ project }: ProjectProps) => {
                     <div className='flex flex-col gap-5'>
                       <div className='flex gap-5 items-center'>
                         <div className='bg-accent/50 rounded-full'>
-                          <Image className='object-cover rounded-full' src={project.projectIcon?.icon} width={100} height={100} alt="Screenshot of the application" />
+                          <Image className='object-cover rounded-full' src={project.projectIcon?.icon} width={80} height={80} alt="Screenshot of the application" />
                         </div>
                         <div className='flex flex-col gap-2'>
                           <div className='text-2xl'>{project.projectName}</div>
@@ -74,7 +74,7 @@ const Project = ({ project }: ProjectProps) => {
                   <div className='px-3 absolute -top-4 left-5 right-0 z-10 text-muted-foreground text-md bg-card max-w-fit'>Features</div>
                   <div className='p-5'>
                     {project.features && project.features.map((feature: any, index: any) => (
-                      <div key={index} className='mt-5'>
+                      <div key={index} className='mt-5 first:mt-0'>
                         <div className='text-lg'>{feature.title}</div>
                         <div className='text-muted-foreground mt-2'>{feature.description}</div>
                       </div>
@@ -87,7 +87,6 @@ const Project = ({ project }: ProjectProps) => {
         </div>
       </div>
     </div>
-
   );
 };
 
