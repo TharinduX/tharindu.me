@@ -11,6 +11,7 @@ import PostShare from '@/components/PostShare'
 import { getPost } from '../../../../sanity/lib/queries'
 import Link from 'next/link'
 import Comments from '@/components/Comments'
+import BackToTop from '@/components/BackToTop'
 
 
 type Props = {
@@ -68,6 +69,7 @@ async function Post({ params: { slug } }: Props) {
           <Comments post={post} />
         </div>
       </section>
+      <BackToTop />
     </article >
   )
 }

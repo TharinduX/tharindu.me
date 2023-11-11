@@ -2,6 +2,7 @@ import React from 'react'
 import { getCategories, getPosts } from '../../../sanity/lib/queries'
 import { CategoryTypes, PostTypes } from '@/types';
 import ClientAllPosts from '@/components/ClientAllPosts';
+import BackToTop from '@/components/BackToTop';
 
 export const revalidate = 60;
 
@@ -19,6 +20,7 @@ const page = async () => {
           <ClientAllPosts posts={allPosts} categories={allCategories} />
         </div>
       </div>
+      <BackToTop />
     </div>
   )
 }
