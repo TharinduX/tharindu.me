@@ -2,8 +2,7 @@
 
 import React from 'react'
 import { usePathname } from 'next/navigation';
-import { Facebook, Linkedin, Instagram } from 'lucide-react';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaXTwitter, FaGithub, FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa6';
 
 const Footer = () => {
   const path = usePathname();
@@ -15,14 +14,17 @@ const Footer = () => {
             © 2023 Tharindu. All rights reserved.
           </div>
           <div className='flex gap-3 '>
+            <a href='https://github.com/TharinduX' target='_blank' rel="noopener noreferrer">
+              <FaGithub size={20} className='text-muted-foreground hover:text-foreground' />
+            </a>
             <a href='https://www.facebook.com/tharindu.me' target='_blank' rel="noopener noreferrer">
-              <Facebook size={20} className='text-muted-foreground hover:text-foreground' />
+              <FaFacebook size={20} className='text-muted-foreground hover:text-foreground' />
             </a>
             <a href='https://www.linkedin.com/in/tharinduj/' target='_blank' rel="noopener noreferrer">
-              <Linkedin size={20} className='text-muted-foreground hover:text-foreground' />
+              <FaLinkedin size={20} className='text-muted-foreground hover:text-foreground' />
             </a>
             <a href='https://www.instagram.com/tharindu.me/' target='_blank' rel="noopener noreferrer">
-              <Instagram size={20} className='text-muted-foreground hover:text-foreground' />
+              <FaInstagram size={20} className='text-muted-foreground hover:text-foreground' />
             </a>
             <a href='https://www.x.com/tharindume/' target='_blank' rel="noopener noreferrer">
               <FaXTwitter size={20} className='text-muted-foreground hover:text-foreground' />
