@@ -4,6 +4,7 @@ import { AboutTypes } from '@/types'
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react'
 import { RichTextComponents } from '@/components/RichTextComponents'
+import BackToTop from '@/components/BackToTop';
 
 export const revalidate = 60;
 
@@ -43,6 +44,7 @@ const page = async () => {
           </div>
         </div>
       </div>
+      <BackToTop />
     </div>
   )
 }
