@@ -1,8 +1,6 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
-import { Separator } from "@/components/ui/separator"
+import LiveStatus from './LiveStatus';
 
 const Hero = () => {
   return (
@@ -19,6 +17,7 @@ const Hero = () => {
           <p className='text-lg text-muted-foreground px-10 md:px-1'>
             I'm Tharindu, and welcome to my portfolio. I'm a full-stack developer, and I love to build things.
           </p>
+          <LiveStatus />
         </div>
       </div>
       <div className='hidden absolute mt-72 dark:flex justify-center items-center pb-10 -z-50'>
