@@ -5,6 +5,9 @@ import React, { useEffect, useState } from 'react';
 import vscode from '../images/vs-code.svg';
 import useSWR from 'swr';
 
+let sessionStarted = '';
+let sessionEnded = '';
+
 const LiveStatus = () => {
   const [timer, setTimer] = useState('');
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -13,8 +16,10 @@ const LiveStatus = () => {
     refreshInterval: 5000,
   });
   const event = data?.event;
-  const sessionStarted = event?.data?.sessionStarted?.time
-  const sessionEnded = event?.data?.sessionEnded?.valid
+  if (event) {
+    sessionStarted = event?.data?.sessionStarted?.time
+    sessionEnded = event?.data?.sessionEnded?.valid
+  }
 
   useEffect(() => {
     if (sessionStarted) {
