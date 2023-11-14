@@ -7,15 +7,14 @@ import useSWR from 'swr';
 
 const LiveStatus = () => {
   const [timer, setTimer] = useState('');
-  const [sessionActive, setSessionActive] = useState(true);
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
   const { data } = useSWR(`/api/telemetry`, fetcher, {
     refreshInterval: 5000,
   });
   const event = data?.event;
-  const sessionStarted = event?.data.sessionStarted.time
-  const sessionEnded = event?.data.sessionEnded.valid
+  const sessionStarted = event?.data?.sessionStarted?.time
+  const sessionEnded = event?.data?.sessionEnded?.valid
 
   useEffect(() => {
     if (sessionStarted) {
