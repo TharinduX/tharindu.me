@@ -24,6 +24,7 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.18.1",
     "@sanity/webhook": "^3.0.1",
+    "@supabase/supabase-js": "^2.38.4",
     "@types/nodemailer": "^6.4.13",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
