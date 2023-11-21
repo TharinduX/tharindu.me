@@ -6,6 +6,7 @@ import { ModeToggle } from '@/components/ui/toggle-mode';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import DashboardSheet from './DashboardSheet';
 
 const Nav = () => {
   const path = usePathname();
@@ -20,7 +21,7 @@ const Nav = () => {
 
   return (
     <header className={path.startsWith("/dashboard") ? "hidden" : ""}>
-      <nav className='fixed w-full px-10 border-b z-50 bg-background '>
+      <nav className='fixed w-[100vw] px-10 border-b z-50 bg-background '>
         <div className='max-w-screen-lg flex items-center justify-between mx-auto p-4'>
           <div className='text-xl font-semibold'>
             <Link href='/'>Tharindu<span className='text-primary'>.me</span></Link>
@@ -38,6 +39,7 @@ const Nav = () => {
             </div>
           </div>
           <div className='flex items-center gap-2'>
+            <DashboardSheet />
             <Button className='md:hidden bg-dark items-center justify-center border p-2 cursor-pointer hover:bg-accent' variant='outline' size='icon' onClick={showMobileMenu}>
               {isMobileMenuOpen ? (
                 <X />
