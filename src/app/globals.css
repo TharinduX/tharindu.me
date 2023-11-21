@@ -72,7 +72,7 @@
     hsl(var(--primary)) 80%,
     hsl(var(--primary-foreground)) 20%
   );
-  filter: blur(100px);
+  filter: blur(6.25rem);
 }
 
 .ruler {
