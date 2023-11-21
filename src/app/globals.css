@@ -70,9 +70,8 @@
   background: linear-gradient(
     to bottom,
     hsl(var(--primary)) 80%,
-    hsl(var(--primary-foreground)) 20%
+    hsl(var(--primary)) 20%
   );
-  filter: blur(6.25rem);
 }
 
 .ruler {

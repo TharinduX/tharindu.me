@@ -20,8 +20,8 @@ const Hero = () => {
           <LiveStatus />
         </div>
       </div>
-      <div className='hidden absolute mt-72 dark:flex justify-center items-center pb-10 -z-50'>
-        <div className='circle rounded-full'></div>
+      <div className='hidden absolute mt-72 dark:flex justify-center items-center -z-10'>
+        <div className='circle rounded-full blur-[100px]'></div>
       </div>
     </section>
   );
