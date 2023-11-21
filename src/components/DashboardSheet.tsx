@@ -18,7 +18,7 @@ const DashboardSheet = () => {
       <SheetTrigger className='md:hidden border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 flex items-center justify-center rounded-md'>
         <KanbanSquare size={20} />
       </SheetTrigger>
-      <SheetContent side='bottom' className='max-h-max overflow-y-auto'>
+      <SheetContent side='bottom' className='h-[90%] md:max-h-max overflow-y-auto'>
         <div className='max-w-screen-xl w-full mx-auto'>
           <SheetHeader className='border-b-1 mt-5'>
             <SheetTitle className='text-3xl'>Dashboard</SheetTitle>
