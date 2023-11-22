@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
+    "@nick22985/wakatime-api": "^1.0.2",
     "@portabletext/react": "^3.0.11",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -27,6 +28,7 @@
     "@sanity/webhook": "^3.0.1",
     "@supabase/supabase-js": "^2.38.4",
     "@types/nodemailer": "^6.4.13",
+    "axios": "^0.21.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cookies-next": "^4.0.0",

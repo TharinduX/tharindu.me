@@ -8,7 +8,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import DashboardSheet from './DashboardSheet';
 
-const Nav = () => {
+type Props = {
+  stats: any;
+}
+
+const Nav = ({ stats }: Props) => {
   const path = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const showMobileMenu = () => {
@@ -39,7 +43,7 @@ const Nav = () => {
             </div>
           </div>
           <div className='flex items-center gap-2'>
-            <DashboardSheet />
+            <DashboardSheet stats={stats} />
             <Button className='md:hidden bg-dark items-center justify-center border p-2 cursor-pointer hover:bg-accent' variant='outline' size='icon' onClick={showMobileMenu}>
               {isMobileMenuOpen ? (
                 <X />

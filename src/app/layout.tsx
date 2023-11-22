@@ -7,7 +7,8 @@ import Nav from '@/components/Nav';
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer';
 import toast, { Toaster } from 'react-hot-toast';
-
+import client from '@/lib/wakatimeClient';
+import { RANGE, SUMMARY_RANGE } from '@nick22985/wakatime-api';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -15,17 +16,18 @@ export const metadata: Metadata = {
   description: 'Personal website of Tharindu Jayasanka',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const getStats = await client.getMyStats(RANGE.LAST_YEAR);
   return (
     <html lang='en'>
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
           <Toaster />
-          <Nav />
+          <Nav stats={getStats} />
           {children}
           <Footer />
         </ThemeProvider>
