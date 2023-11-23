@@ -1,10 +1,8 @@
 
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { urlForImage } from '../../sanity/lib/image'
 import ClientSyntax from './ClientSyntax'
-import { ExternalLink } from 'lucide-react'
 
 export const RichTextComponents = {
   types: {
@@ -54,12 +52,12 @@ export const RichTextComponents = {
   },
   marks: {
     link: ({ children, value }: any) => {
-      const rel = !value.href.startsWith("/") ? "noopener noreferrer" : undefined;
+      const rel = !value.href?.startsWith("/") ? "noopener noreferrer" : undefined;
 
       return (
-        <Link href={value.href} rel={rel} className='underline text-primary decoration-primary hover:decoration-accent'>
+        <a href={value.href} rel={rel} className='underline text-primary decoration-primary hover:decoration-accent'>
           {children}
-        </Link >
+        </a >
       )
     },
     code: ({ children }: any) => (
