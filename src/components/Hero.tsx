@@ -1,13 +1,16 @@
 
 import React from 'react';
 import LiveStatus from './LiveStatus';
+import { getAuthorImage } from '../../sanity/lib/queries';
 
-const Hero = () => {
+const Hero = async () => {
+  const profileImage = await getAuthorImage()
+  const image = profileImage[0].image
   return (
     <section className='pt-32 px-5 flex flex-col items-center text-center gap-8 mx-auto mb-8'>
       <div className='max-w-screen-md items-center flex flex-col gap-3 relative'>
         <img
-          src='https://github.com/TharinduX.png'
+          src={image.image}
           width={100}
           height={100}
           className='rounded-full border-2 border-primary-foreground'
