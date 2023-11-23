@@ -53,17 +53,22 @@ const LiveStatus = () => {
           {event ? (
             <div>
               <div className='mt-5 text-sm text-muted-foreground'>Working on something cool:</div>
-              <div className=' mt-2 bg-card items-center flex max-w-fit mx-auto px-4 py-2 rounded-full border'>
-                <div className='flex items-center text-muted-foreground gap-2 text-sm divide-solid'>
-                  <div className='relative flex h-3 w-3 items-center justify-center'>
-                    <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75'></span>
-                    <span className='relative inline-flex rounded-full h-2 w-2 bg-green-500'></span>
+              <div className=' mt-2 bg-card items-center flex max-w-fit mx-auto px-4 py-2 rounded-full border flex-wrap'>
+                <div className='flex items-center text-muted-foreground gap-1 text-sm divide-solid'>
+                  <div className='flex items-center gap-2 '>
+                    <div className='relative flex h-3 w-3 items-center justify-center'>
+                      <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75'></span>
+                      <span className='relative inline-flex rounded-full h-2 w-2 bg-green-500'></span>
+                    </div>
+                    <div className='truncate w-28 md:w-full'>
+                      Editing {event?.data?.activeFile?.name || 'a file'}
+                    </div>
                   </div>
-                  Editing {event?.data?.activeFile?.name || 'a file'} on
-                  <span>
-                    <Image alt='vs code' src={vscode} width={18} height={18} />
+                  <span className='flex gap-1'>
+                    on
+                    <Image alt='vs code' src={vscode} />
                   </span>
-                  <span className='bg-accent border px-3 py-1 rounded-full'>{timer || '00:00'} elapsed</span>
+                  <span className='ml-1 bg-accent border px-3 py-1 rounded-full'>{timer || '00:00'} elapsed</span>
                 </div>
               </div>
             </div>

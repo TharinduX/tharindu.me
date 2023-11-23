@@ -51,6 +51,9 @@
   }
 }
 
+/* --ruler: 0, 0%, 80%, 0.22;
+--ruler: 0, 0%, 30%, 0.1; */
+
 @layer base {
   * {
     @apply border-border;
@@ -67,9 +70,8 @@
   background: linear-gradient(
     to bottom,
     hsl(var(--primary)) 80%,
-    hsl(var(--primary-foreground)) 20%
+    hsl(var(--primary)) 20%
   );
-  filter: blur(100px);
 }
 
 .ruler {

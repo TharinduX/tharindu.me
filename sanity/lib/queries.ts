@@ -68,3 +68,12 @@ export async function getCategories() {
     }`
   );
 }
+
+export async function getAuthorImage() {
+  return client.fetch(
+    groq`*[_type == "author"] {
+      _id,
+      image {"image": asset->url},
+    }`
+  );
+}
