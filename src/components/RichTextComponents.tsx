@@ -30,6 +30,12 @@ export const RichTextComponents = {
     ),
   },
   block: {
+    normal: ({ children }: any) => {
+      if (children.length === 1 && children[0] === '') {
+        return <br />
+      }
+      return <p>{children}</p>
+    },
     h1: ({ children }: any) => (
       <h1 className='text-5xl py-10 font-bold'>{children}</h1>
     ),
@@ -51,8 +57,8 @@ export const RichTextComponents = {
       const rel = !value.href.startsWith("/") ? "noopener noreferrer" : undefined;
 
       return (
-        <Link href={value.href} rel={rel} className='underline text-primary decoration-primary hover:decoration-accent gap-1 flex items-center'>
-          {children}<ExternalLink size={15} />
+        <Link href={value.href} rel={rel} className='underline text-primary decoration-primary hover:decoration-accent'>
+          {children}
         </Link >
       )
     },
@@ -61,5 +67,6 @@ export const RichTextComponents = {
 
     )
   }
+
 }
 
