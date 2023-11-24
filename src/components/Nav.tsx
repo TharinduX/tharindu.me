@@ -44,7 +44,7 @@ const Nav = ({ stats }: Props) => {
           </div>
           <div className='flex items-center gap-2'>
             <DashboardSheet stats={stats} />
-            <Button className='md:hidden bg-dark items-center justify-center border p-2 cursor-pointer hover:bg-accent' variant='outline' size='icon' onClick={showMobileMenu}>
+            <Button aria-label='menu' className='md:hidden bg-dark items-center justify-center border p-2 cursor-pointer hover:bg-accent' variant='outline' size='icon' onClick={showMobileMenu}>
               {isMobileMenuOpen ? (
                 <X />
               ) : (

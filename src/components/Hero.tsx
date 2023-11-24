@@ -11,6 +11,7 @@ const Hero = async () => {
       <div className='max-w-screen-md items-center flex flex-col gap-3 relative'>
         <img
           src={image.image}
+          alt='Tharindu Jayasanka profile image'
           width={100}
           height={100}
           className='rounded-full border-2 border-primary-foreground'
