@@ -14,19 +14,19 @@ const Footer = () => {
             © 2023 Tharindu. All rights reserved.
           </div>
           <div className='flex gap-3 '>
-            <a href='https://github.com/TharinduX' target='_blank' rel="noopener noreferrer">
+            <a aria-label='github link' href='https://github.com/TharinduX' target='_blank' rel="noopener noreferrer">
               <FaGithub size={20} className='text-muted-foreground hover:text-foreground' />
             </a>
-            <a href='https://www.facebook.com/tharindu.me' target='_blank' rel="noopener noreferrer">
+            <a aria-label='facebook link' href='https://www.facebook.com/tharindu.me' target='_blank' rel="noopener noreferrer">
               <FaFacebook size={20} className='text-muted-foreground hover:text-foreground' />
             </a>
-            <a href='https://www.linkedin.com/in/tharinduj/' target='_blank' rel="noopener noreferrer">
+            <a aria-label='linkedin link' href='https://www.linkedin.com/in/tharinduj/' target='_blank' rel="noopener noreferrer">
               <FaLinkedin size={20} className='text-muted-foreground hover:text-foreground' />
             </a>
-            <a href='https://www.instagram.com/tharindu.me/' target='_blank' rel="noopener noreferrer">
+            <a aria-label='instagram link' href='https://www.instagram.com/tharindu.me/' target='_blank' rel="noopener noreferrer">
               <FaInstagram size={20} className='text-muted-foreground hover:text-foreground' />
             </a>
-            <a href='https://www.x.com/tharindume/' target='_blank' rel="noopener noreferrer">
+            <a aria-label='twitter link' href='https://www.x.com/tharindume/' target='_blank' rel="noopener noreferrer">
               <FaXTwitter size={20} className='text-muted-foreground hover:text-foreground' />
             </a>
           </div>

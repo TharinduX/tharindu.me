@@ -20,8 +20,8 @@ const DashboardSheet = ({ stats }: Props) => {
   const wakadata = stats.data
   return (
     <Sheet>
-      <SheetTrigger className='hidden border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 md:flex items-center justify-center rounded-md gap-2'><KanbanSquare size={20} /> Dashboard</SheetTrigger>
-      <SheetTrigger className='md:hidden border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 flex items-center justify-center rounded-md'>
+      <SheetTrigger aria-label='dashboard' className='hidden border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 md:flex items-center justify-center rounded-md gap-2'><KanbanSquare size={20} /> Dashboard</SheetTrigger>
+      <SheetTrigger aria-label='dashboard' className='md:hidden border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 flex items-center justify-center rounded-md'>
         <KanbanSquare size={20} />
       </SheetTrigger>
       <SheetContent side='bottom' className='h-[90%] md:h-fit md:max-h-max overflow-y-auto'>
