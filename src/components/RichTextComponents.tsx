@@ -21,10 +21,10 @@ export const RichTextComponents = {
   },
   list: {
     bullet: ({ children }: any) => (
-      <ul className='ml-10 py-5 list-disc space-y-2'>{children}</ul>
+      <ul className='ml-10 py-2 list-disc space-y-2 text-muted-foreground'>{children}</ul>
     ),
     number: ({ children }: any) => (
-      <ol className='mt-lg list-decimal'>{children}</ol>
+      <ol className='ml-4 mt-lg py-2 list-decimal space-y-2 text-muted-foreground'>{children}</ol>
     ),
   },
   block: {
@@ -32,19 +32,19 @@ export const RichTextComponents = {
       if (children.length === 1 && children[0] === '') {
         return <br />
       }
-      return <p>{children}</p>
+      return <p className='text-muted-foreground'>{children}</p>
     },
     h1: ({ children }: any) => (
-      <h1 className='text-5xl py-10 font-bold'>{children}</h1>
+      <h1 className='text-5xl py-5 font-bold'>{children}</h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className='text-4xl py-10 font-bold'>{children}</h2>
+      <h2 className='text-4xl py-5 font-bold'>{children}</h2>
     ),
     h3: ({ children }: any) => (
-      <h2 className='text-3xl py-10 font-bold'>{children}</h2>
+      <h2 className='text-2xl py-5 font-bold'>{children}</h2>
     ),
     h4: ({ children }: any) => (
-      <h4 className='text-4xl py-10 font-bold'>{children}</h4>
+      <h4 className='text-xl py-3 font-bold'>{children}</h4>
     ),
     blockquote: ({ children }: any) => (
       <blockquote className='border-l-primary border-l-4 pl-5 my-5 text-xl py-8 italic'>{children}</blockquote>

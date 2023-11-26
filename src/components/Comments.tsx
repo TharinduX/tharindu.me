@@ -26,7 +26,7 @@ const Comments = ({ post }: Props) => {
 
   useEffect(() => {
     const onScroll = () => {
-      if (window.scrollY >= 200) {
+      if (window.scrollY >= 100) {
         setShown(true);
       }
     };
