@@ -9,6 +9,9 @@ import Footer from '@/components/Footer';
 import toast, { Toaster } from 'react-hot-toast';
 import client from '@/lib/wakatimeClient';
 import { RANGE, SUMMARY_RANGE } from '@nick22985/wakatime-api';
+
+import { Analytics } from '@vercel/analytics/react';
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -29,6 +32,7 @@ export default async function RootLayout({
           <Toaster />
           <Nav stats={getStats} />
           {children}
+          <Analytics />
           <Footer />
         </ThemeProvider>
       </body>

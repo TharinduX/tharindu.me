@@ -28,6 +28,7 @@
     "@sanity/webhook": "^3.0.1",
     "@supabase/supabase-js": "^2.38.4",
     "@types/nodemailer": "^6.4.13",
+    "@vercel/analytics": "^1.1.1",
     "axios": "^0.21.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
