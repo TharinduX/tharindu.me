@@ -12,8 +12,10 @@ export async function getProjects() {
       githubURL,
       features,
       projectImage {"image": asset->url},
-      techStack,
+      techStack[] {name, "icon": icon.asset->url},
       projectDate,
+      projectStatus,
+      previewURL,
     }`
   );
 }

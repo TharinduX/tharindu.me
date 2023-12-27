@@ -12,8 +12,13 @@ export type ProjectTypes = {
   projectImage: {
     image: HTMLImageElement;
   };
-  techStack: String[];
+  techStack: {
+    name: String;
+    icon: HTMLImageElement;
+  }[];
   projectDate: Date;
+  projectStatus: Boolean;
+  previewURL: HTMLAnchorElement;
 };
 
 export type AboutTypes = {

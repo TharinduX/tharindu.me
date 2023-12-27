@@ -20,6 +20,18 @@ export default defineType({
       validation: (Rule: any) => Rule.required(),
     },
     {
+      name: 'projectStatus',
+      title: 'Project Status',
+      description: 'Is this project completed?',
+      type: 'boolean',
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
+      name: 'previewURL',
+      title: 'Preview URL',
+      type: 'url',
+    },
+    {
       name: 'techStack',
       type: 'array',
       title: 'Tech stack',
@@ -28,7 +40,10 @@ export default defineType({
         {
           type: 'object',
           name: 'stack',
-          fields: [{ type: 'string', name: 'name' }],
+          fields: [
+            { type: 'string', name: 'name' },
+            { type: 'image', name: 'icon' },
+          ],
         },
       ],
     },
