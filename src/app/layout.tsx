@@ -25,6 +25,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const getStats = await client.getMyStats(RANGE.LAST_30_DAYS);
+
   return (
     <html lang='en'>
       <body className={inter.className}>
