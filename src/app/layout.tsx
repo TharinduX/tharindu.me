@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { ThemeProvider } from '@/components/theme-provider';
 import Nav from '@/components/Nav';
+import Script from 'next/script'
 
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer';
@@ -29,7 +30,7 @@ export default async function RootLayout({
   return (
     <html lang='en'>
       <head>
-        <script defer data-domain="tharindu.me" src="https://plausible.app.tharindu.me/js/script.js"></script>
+        <Script defer data-domain="tharindu.me" src="https://plausible.app.tharindu.me/js/script.js" />
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
