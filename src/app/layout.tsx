@@ -28,6 +28,9 @@ export default async function RootLayout({
 
   return (
     <html lang='en'>
+      <head>
+        <script defer data-domain="tharindu.me" src="https://plausible.app.tharindu.me/js/script.js"></script>
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
           <Toaster />
